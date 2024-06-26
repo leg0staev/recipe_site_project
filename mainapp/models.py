@@ -38,6 +38,10 @@ class Recipe(models.Model):
     published = models.BooleanField(default=True, verbose_name='Опубликован')
     added_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
 
+    def get_short_description(self, length=100):
+        """Возвращает первые `length` символов описания"""
+        return self.description[:length] + ('...' if len(self.description) > length else '')
+
     def __str__(self):
         return self.title
 

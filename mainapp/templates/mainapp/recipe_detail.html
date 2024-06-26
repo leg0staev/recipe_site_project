@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <h1>{{ title }}</h1>
+    <p>{{ object.description }}</p>
+    <p>{{ object.cooking_steps }}</p>
+    <p>Время приготовления: {{ object.cooking_time }} минут</p>
+    {% if object.img %}
+        <img src="{{ object.img.url }}" alt="{{ object.title }}">
+    {% endif %}
+    <p>Автор: {{ object.author.username }}</p>
+    <p>Дата добавления: {{ object.added_date }}</p>
+
+
+{% endblock content %}
