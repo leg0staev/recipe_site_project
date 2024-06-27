@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}{{ title }}{% endblock %}
 {% block content %}
 
-
+<main>
     <h1>{{ title }}</h1>
     <p>{{ object.description }}</p>
     <p>{{ object.cooking_steps }}</p>
@@ -13,6 +13,6 @@
     {% endif %}
     <p>Автор: {{ object.author.username }}</p>
     <p>Дата добавления: {{ object.added_date }}</p>
-
+</main>
 
 {% endblock content %}

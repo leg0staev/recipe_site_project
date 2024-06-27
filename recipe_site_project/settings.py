@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 # project_folder = os.path.expanduser('~/recipe_site_project')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

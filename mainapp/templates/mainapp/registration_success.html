@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+<main>
+<h1>Регистрация успешна!</h1>
+<p>Вы успешно зарегистрировались. Теперь вы можете <a href="{% url 'mainapp:all_recipes' %}">посмотреть все рецепты</a>.</p>
+</main>
+
+{% endblock content %}
