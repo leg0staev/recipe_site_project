@@ -13,6 +13,9 @@
     {% endif %}
     <p>Автор: {{ object.author.username }}</p>
     <p>Дата добавления: {{ object.added_date }}</p>
+    {% if user == object.author %}
+        <a href="{% url 'mainapp:recipe_edit' object.pk %}">Редактировать рецепт</a>
+    {% endif %}
 </main>
 
 {% endblock content %}
