@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+<main>
+    <h1>Вы успешно вышли из системы</h1>
+    <p>Спасибо за использование нашего сайта. <a href="{% url 'mainapp:login' %}">Войти снова</a>.</p>
+</main>
+{% endblock content %}

@@ -2,9 +2,8 @@
 {% load static %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-
 <main>
-    <h1>Что будем готовить?</h1>
+<h1>Все наши рецепты:</h1>
     <ul>
         {% for recipe in recipes %}
         <li>
@@ -15,4 +14,5 @@
         {% endfor %}
     </ul>
 </main>
+
 {% endblock content %}
