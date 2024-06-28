@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-
-<main>
-    <h1>{{ title }}</h1>
-    <p>{{ object.description }}</p>
-    <p>{{ object.cooking_steps }}</p>
-    <p>Время приготовления: {{ object.cooking_time }} минут</p>
-    {% if object.img %}
-        <img src="{{ object.img.url }}" alt="{{ object.title }}">
-    {% endif %}
-    <p>Автор: {{ object.author.username }}</p>
-    <p>Дата добавления: {{ object.added_date }}</p>
-    {% if user == object.author %}
-        <a href="{% url 'mainapp:recipe_edit' object.pk %}">Редактировать рецепт</a>
-    {% endif %}
-</main>
-
-{% endblock content %}
+    <h1 class="mt-4">{{ title }}</h1>
+    <div class="card mb-4 shadow-sm">
+        {% if object.img %}
+            <img src="{{ object.img.url }}" class="card-img-top" alt="{{ object.title }}">
+        {% endif %}
+        <div class="card-body">
+            <p class="card-text">{{ object.description }}</p>
+            <p class="card-text">{{ object.cooking_steps }}</p>
+            <p class="card-text">Время приготовления: {{ object.cooking_time }} минут</p>
+            <p class="card-text">Автор: {{ object.author.username }}</p>
+            <p class="card-text">Дата добавления: {{ object.added_date }}</p>
+            {% if user == object.author %}
+                <a href="{% url 'mainapp:recipe_edit' object.pk %}" class="btn btn-primary">Редактировать рецепт</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

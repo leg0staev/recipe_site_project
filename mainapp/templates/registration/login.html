@@ -1,11 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends "base.html" %}
+
+{% block title %}Вход{% endblock %}
 
 {% block content %}
-    <h1>Вход</h1>
+    <h1 class="mt-4">Вход</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Войти</button>
+        <button type="submit" class="btn btn-primary">Войти</button>
     </form>
-{% endblock content %}
+{% endblock %}
