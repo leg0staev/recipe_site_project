@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-<main>
-    <h1>Регистрация</h1>
+    <h1 class="mt-4">Регистрация</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </form>
-</main>
-{% endblock content %}
+{% endblock %}

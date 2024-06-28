@@ -1,18 +1,25 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
 
-<main>
-    <h1>Что будем готовить?</h1>
-    <ul>
-        {% for recipe in recipes %}
-        <li>
-            <a href="{% url 'mainapp:recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
-            <p>{{ recipe.get_short_description }}</p>
-        </li>
+<h1>Что будем готовить?</h1>
+{% for recipe in recipes %}
+<div class="row">
+    <div class="col">
+        <div class="card h-100">
+            {% if recipe.img %}
+            <img src="{{ recipe.img.url }}" class="card-img-top" alt="{{ recipe.title }}">
+            {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'mainapp:recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h5>
+                        <p class="card-text">{{ recipe.get_short_description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Автор: {{ recipe.author.username }}</small>
+                    </div>
+                </div>
+            </div>
+</div>
+{% endfor %}
 
-        {% endfor %}
-    </ul>
-</main>
-{% endblock content %}
+{% endblock %}
